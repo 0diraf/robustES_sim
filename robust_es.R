@@ -88,9 +88,7 @@ normal_contaminated <- function(n, contamination_rate, dist_type = "pareto", alp
   n_contaminated <- rbinom(1, n, contamination_rate)
   n_normal <- n - n_contaminated
 
-  # bulk_sd controls the normal bulk; sd controls only the contaminant's spread
-  # (the lognormal sdlog). Decoupling these keeps the treatment bulk at N(mean, bulk_sd)
-  # while the lognormal sweep varies sigma_log, instead of the two moving together.
+  # bulk_sd controls the normal bulk; sd controls only the contaminant's spread (the lognormal sdlog)
   data_normal <- rnorm(n_normal, mean = mean, sd = bulk_sd)
 
   if (dist_type == "pareto") {
