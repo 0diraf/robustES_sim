@@ -218,6 +218,8 @@ sweep_long_poss <- sweep_results_poss %>%
                          "Delta_MAD" = "Blaine's d",
                          "Winsorized_d" = "AKP robust d"))
 
+sweep_long_poss$Alpha <- factor(sweep_long_poss$Alpha, levels = c(2.5, 1.5, 0.5))
+
 p1_poss <- ggplot(sweep_long_poss, aes(x = Fraction, y = Value, color = Metric)) +
   
   geom_line(aes(linetype = Metric), linewidth = 1.2, alpha = 0.8) + 
@@ -293,6 +295,8 @@ sweep_long_posm <- sweep_results_posm  %>%
                          "Delta_MAD" = "Blaine's d",
                          "Winsorized_d" = "AKP robust d"))
 
+sweep_long_posm$Alpha <- factor(sweep_long_posm$Alpha, levels = c(2.5, 1.5, 0.5))
+
 p1_posm <- ggplot(sweep_long_posm, aes(x = Fraction, y = Value, color = Metric)) +
   
   geom_line(aes(linetype = Metric), linewidth = 1.2, alpha = 0.8) + 
@@ -350,6 +354,8 @@ sweep_long_posl <- sweep_results_posl %>%
                          "Cohen_d" = "Cohen's d",
                          "Delta_MAD" = "Blaine's d",
                          "Winsorized_d" = "AKP robust d"))
+
+sweep_long_posl$Alpha <- factor(sweep_long_posl$Alpha, levels = c(2.5, 1.5, 0.5))
 
 p1_posl <- ggplot(sweep_long_posl, aes(x = Fraction, y = Value, color = Metric)) +
   
@@ -487,8 +493,6 @@ lsweep_long_posm <- lsweep_results_posm %>%
                          "Cohen_d" = "Cohen's d",
                          "Delta_MAD" = "Blaine's d",
                          "Winsorized_d" = "AKP robust d"))
-
-lsweep_long_posm$SD <- factor(lsweep_long_posm$SD, levels = c(3, 1.8, 1))
 
 lp1_posm <- ggplot(lsweep_long_posm, aes(x = Fraction, y = Value, color = Metric)) +
   
