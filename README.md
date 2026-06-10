@@ -26,5 +26,5 @@ The treatment group is generated as a contaminated mixture: `(1 - f) * N(μ, 1) 
 
 ## Reference
 
-Ricca, B. & Blaine, B. (2020). Notes on a nonparametric estimate of effect size. *Journal of Experimental Education*.
+Ricca, B. & Blaine, B. (2022). Notes on a nonparametric estimate of effect size. *Journal of Experimental Education*.
 
